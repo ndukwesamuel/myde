@@ -1,0 +1,2 @@
+step one  ==> pip xfreeze > requirements.txt
+step two ==> push to git
