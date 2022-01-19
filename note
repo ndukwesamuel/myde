@@ -1,4 +1,4 @@
-step one  ==> pip xfreeze > requirements.txt
+step one  ==> pip freeze > requirements.txt
 step two ==> push to git 
     git init
     git add . 
@@ -8,4 +8,44 @@ step two ==> push to git
     git push -u origin master 
 
 
-==> step   heroku login
+==> step   heroku login   
+step 4 ==> heroku   git:remote -a samhearttodo       (name_of_heroku_app)
+step 5 git remote
+
+
+step 6 ==>  pip install  gunicorn
+step 7 ==> pip install whitenoise
+http://whitenoise.evans.io/en/stable/  {
+    Edit your settings.py file and add WhiteNoise to the MIDDLEWARE list, above all other middleware apart from Django’s SecurityMiddleware:
+
+MIDDLEWARE = [
+  # 'django.middleware.security.SecurityMiddleware',
+  'whitenoise.middleware.WhiteNoiseMiddleware',
+  # ...
+]
+
+
+Want forever-cacheable files and compression support? Just add this to your settings.py:
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+}
+
+step 8 ==> pip freeze > requirements.txt
+
+step 9 ==> create a runtime.txt  {
+    inside the file Specify a Python Runtime
+    as at the time of coding 
+    Supported runtime options include:
+
+        python-3.10.2
+        python-3.9.10
+        python-3.8.12
+        python-3.7.12
+} 
+
+step 10 ==> create a  Procfile {
+
+    web: gunicorn TechTodo.wsgi  --log-file -
+}
+
+step 11 ==> ALLOWED_HOSTS = ['samhearttodo.herokuapp.com', '127.0.0.1']
