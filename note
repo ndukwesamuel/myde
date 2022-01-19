@@ -1,2 +1,11 @@
 step one  ==> pip xfreeze > requirements.txt
-step two ==> push to git
+step two ==> push to git 
+    git init
+    git add . 
+    git commit -m "add your message here"
+    git branch -M main
+    git remote add origin https://github.com/ndukwesamuel/myde.git
+    git push -u origin master 
+
+
+==> step   heroku login
